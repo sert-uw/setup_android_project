@@ -7,6 +7,7 @@ cd $HOME/androidProjects
 
 git clone git@github.com:sert-uw/AndroidBaseProject.git $PROJECT_NAME
 cd $PROJECT_NAME
+git remote remove origin
 
 echo sdk.dir=$ANDROID_HOME > local.propeties
 
