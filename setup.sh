@@ -11,8 +11,13 @@ git remote remove origin
 
 echo sdk.dir=$ANDROID_HOME > local.propeties
 
-FILE_NAME="$HOME/androidProjects/${PROJECT_NAME}/app/src/main/res/values/strings.xml"
+git add local.propeties
+git commit -m "create local.propeties"
 
+FILE_NAME="$HOME/androidProjects/${PROJECT_NAME}/app/src/main/res/values/strings.xml"
 sed -i -e "s/AndroidBaseProject/${PROJECT_NAME}/g" $FILE_NAME
+
+git add $FILE_NAME
+git commit -m "change app name"
 
 ./gradlew build
