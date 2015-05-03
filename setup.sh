@@ -11,6 +11,8 @@ git remote remove origin
 
 echo sdk.dir=$ANDROID_HOME > local.propeties
 
-sed -e s/AndroidBaseProject/${PROJECT_NAME}/ $HOME/androidProjects/${PROJECT_NAME}/app/src/main/res/values/strings.xml
+FILE_NAME="$HOME/androidProjects/${PROJECT_NAME}/app/src/main/res/values/strings.xml"
+
+sed -i -e "s/AndroidBaseProject/${PROJECT_NAME}/g" $FILE_NAME
 
 ./gradlew build
